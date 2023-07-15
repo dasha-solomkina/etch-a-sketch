@@ -1,16 +1,25 @@
 const container = document.querySelector(".container");
 
-const gridSize = 256;
-const calWidth = 520 / Math.pow(gridSize, 1/2);
+// Add slider input
+const slider = document.querySelector("#slider");
+let gridSize = 2;
 
-//Make the grid
-for (let i = 0; i < gridSize; i++) {
-    const div = document.createElement("div");
-    div.classList.add("childDiv"); // connect style
-    div.classList.add("childDiv2"); // connect style
-    div.style.width = calWidth + "px"; // define the size
-    container.appendChild(div); // add to the container
-};
+slider.addEventListener("change", function() {
+    gridSize = slider.value;
+    console.log(gridSize);
+    const calWidth = 520 / gridSize;
+    container.innerHTML = ''; // Clears all the content inside the div
+    //Make the grid
+    for (let i = 0; i < (Math.pow(gridSize, 2)); i++) {
+        const div = document.createElement("div");
+        div.classList.add("childDiv"); // connect style
+        div.classList.add("childDiv2"); // connect style
+        div.style.width = calWidth + "px"; // define the size
+        container.appendChild(div); // add to the container
+    };
+});
+
+
 
 // change the color of the grid item when clicked
 // CHANGE FROM CLICK TO CLICK AND HOVER
@@ -21,5 +30,4 @@ square.forEach((childDiv2) => childDiv2.addEventListener("click", () => {
     childDiv2.classList.remove("childDiv");
 }));
 
-// Add slider input
 
