@@ -41,8 +41,8 @@ body {
 }
 
 
-.childDiv {
-    background-color: red;
+.defaultColor {
+    background-color: rgb(228, 241, 227);
 }
 
 .childDivT {
