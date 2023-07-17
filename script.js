@@ -27,15 +27,29 @@ slider.addEventListener("change", function() {
         div.style.width = calWidth + "px"; // define the size
         container.appendChild(div); // add to the container
     };
+    // change the color of the grid item when clicked
+    const square = document.querySelectorAll(".childDiv2");
+    square.forEach((childDiv2) => childDiv2.addEventListener("mouseenter", () => {
+        childDiv2.classList.remove("childDiv");
+    }));
+    console.log(square);
+    // clean the pad
+    const clear = document.querySelector("#clear");
+    clear.addEventListener("click", () => {
+        // square.forEach(childDiv2.classList.add("childDiv"));
+        square.forEach(function(element) {
+            element.classList.add("childDiv")
+        });
+    });
 });
 
-// change the color of the grid item when clicked
-const square = document.querySelectorAll(".childDiv2");
 
 
-square.forEach((childDiv2) => childDiv2.addEventListener("click", () => {
-    console.log(childDiv2);
-    childDiv2.classList.remove("childDiv");
-}));
+// // clean the pad
+// const clear = document.querySelector("#clear");
+// clear.addEventListener("click", () => {
+//     square.classList.add("childDiv");
+// });
+
 
 
