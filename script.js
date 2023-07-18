@@ -7,8 +7,13 @@ let gridSize;
 const sliderValue = document.querySelector("#slider-value");
 sliderValue.textContent = "16 x 16"
 
+const coloring = document.querySelector("#color-mode");
+const rainbow = document.querySelector("#rainbow-mode");
+const eraser = document.querySelector("#eraser");
+const clear = document.querySelector("#clear");
+const rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
 
-//The default look (16x16)
+// The default look (16x16)
 window.addEventListener("load", () => {
     for (let i = 0; i < 256; i++) {
         const div = document.createElement("div");
@@ -20,25 +25,49 @@ window.addEventListener("load", () => {
 
     // listen to the color
     const colorPicked = document.querySelector("#colorPicker");
-    let colorPickedValue = "black"
-
+    let colorPickedValue = "black";
+    
     colorPicked.addEventListener("input", () => {
         colorPickedValue = colorPicked.value;
-        console.log(colorPickedValue)
+        square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
+            childDiv.style.backgroundColor = colorPickedValue;
+        }));
     });
 
-    // change the brush color
+    // change brush color (palette)
     const square = document.querySelectorAll(".childDiv");
+
     square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
         childDiv.style.backgroundColor = colorPickedValue;
     }));
 
+    // Coloring mode
+    coloring.addEventListener("click",() => {
+        square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
+            childDiv.style.backgroundColor = colorPickedValue;        
+        }));
+    });
+    
     // clean the pad
-    const clear = document.querySelector("#clear");
     clear.addEventListener("click", () => {
         square.forEach(function(one) {
             one.style.backgroundColor = "aquamarine";
         })
+    });
+
+    // Erase
+    eraser.addEventListener("click",() => {
+        square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
+            childDiv.style.backgroundColor = "aquamarine";        
+        }));
+    });
+
+    // Rainbow mode
+    rainbow.addEventListener("click",() => {
+        square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
+            const randomIndex = Math.floor(Math.random() * rainbowColors.length);
+            childDiv.style.backgroundColor = rainbowColors[randomIndex];
+        }));
     });
 });
 
@@ -57,26 +86,51 @@ slider.addEventListener("input", function() {
         div.style.width = calWidth + "px"; // define the size
         container.appendChild(div); // add to the container
     };
+    
     // listen to the color
     const colorPicked = document.querySelector("#colorPicker");
-    let colorPickedValue = "black"
-
+    let colorPickedValue = "black";
+    
     colorPicked.addEventListener("input", () => {
         colorPickedValue = colorPicked.value;
-        console.log(colorPickedValue)
+        square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
+            childDiv.style.backgroundColor = colorPickedValue;
+        }));
     });
 
-    // change brush color
+    // change brush color (palette)
     const square = document.querySelectorAll(".childDiv");
+
     square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
         childDiv.style.backgroundColor = colorPickedValue;
     }));
 
+    // Coloring mode
+    coloring.addEventListener("click",() => {
+        square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
+            childDiv.style.backgroundColor = colorPickedValue;        
+        }));
+    });
+    
     // clean the pad
-    const clear = document.querySelector("#clear");
     clear.addEventListener("click", () => {
         square.forEach(function(one) {
             one.style.backgroundColor = "aquamarine";
         })
+    });
+
+    // Erase
+    eraser.addEventListener("click",() => {
+        square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
+            childDiv.style.backgroundColor = "aquamarine";        
+        }));
+    });
+
+    // Rainbow mode
+    rainbow.addEventListener("click",() => {
+        square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
+            const randomIndex = Math.floor(Math.random() * rainbowColors.length);
+            childDiv.style.backgroundColor = rainbowColors[randomIndex];
+        }));
     });
 });
