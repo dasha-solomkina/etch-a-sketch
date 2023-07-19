@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
 
     // listen to the color
     const colorPicked = document.querySelector("#colorPicker");
-    let colorPickedValue = "#376996";
+    let colorPickedValue = "#1d3461";
     
     colorPicked.addEventListener("input", () => {
         colorPickedValue = colorPicked.value;
@@ -87,7 +87,7 @@ slider.addEventListener("input", function() {
     
     // listen to the color
     const colorPicked = document.querySelector("#colorPicker");
-    let colorPickedValue = "#376996";
+    let colorPickedValue = "#1d3461";
     
     colorPicked.addEventListener("input", () => {
         colorPickedValue = colorPicked.value;

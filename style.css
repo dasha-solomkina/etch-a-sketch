@@ -24,6 +24,7 @@ body {
 h1 {
     margin-bottom: 0;
     color: #1d3461;
+    font-weight: bolder;
 }
 
 .main {
@@ -33,7 +34,7 @@ h1 {
 }
 
 .container {
-    border: 3px solid black;
+    border: 3px solid #1d3461;
     width: 520px;
     height: 520px;
     display: flex;
@@ -47,6 +48,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    width: 200px;
 }
 
 .placeholder {
@@ -55,7 +57,7 @@ h1 {
 
 button {
     font-size: 18px;
-    padding: 8px;
+    padding: 14px;
     color: #1d3461;
     border: 1px solid #1d3461;
     border-radius: 2px;
@@ -63,6 +65,8 @@ button {
 
 button:hover {
     cursor: pointer;
+    background-color: #376996;
+    color: white;
 }
 
 input:hover {
@@ -70,12 +74,15 @@ input:hover {
 }
 
 #colorPicker {
-    border: 0;
+    border: none;
     padding: 0;
     margin: 0;
-    border-radius: 10px;
-    width: 200px; /* Adjust width to your preference */
-    height: 60px; 
+    width: 200px;
+    height: 60px;
+}
+
+#slider {
+    width: 200px;
 }
 
 .footer {
@@ -90,4 +97,3 @@ a {
     font-family: 'Bungee', sans-serif;
     color: #1d3461;
 }
-
