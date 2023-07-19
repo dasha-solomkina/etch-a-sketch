@@ -1,6 +1,4 @@
 const container = document.querySelector(".container");
-
-// Add slider input
 const slider = document.querySelector("#slider");
 let gridSize;
 
@@ -17,8 +15,8 @@ const rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "vi
 window.addEventListener("load", () => {
     for (let i = 0; i < 256; i++) {
         const div = document.createElement("div");
-        div.classList.add("childDiv"); // connect style
-        div.style.width = 32.5 + "px"; // define the size
+        div.classList.add("childDiv");
+        div.style.width = 32.5 + "px"; // define the default size
         container.appendChild(div); // add to the container
     };
 
@@ -35,12 +33,11 @@ window.addEventListener("load", () => {
 
     // change brush color (palette)
     const square = document.querySelectorAll(".childDiv");
-
     square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
         childDiv.style.backgroundColor = colorPickedValue;
     }));
 
-    // Coloring mode
+    // coloring mode
     coloring.addEventListener("click",() => {
         square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
             childDiv.style.backgroundColor = colorPickedValue;        
@@ -54,14 +51,14 @@ window.addEventListener("load", () => {
         })
     });
 
-    // Erase
+    // erase
     eraser.addEventListener("click",() => {
         square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
             childDiv.style.backgroundColor = "white";        
         }));
     });
 
-    // Rainbow mode
+    // rainbow mode
     rainbow.addEventListener("click",() => {
         square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
             const randomIndex = Math.floor(Math.random() * rainbowColors.length);
@@ -71,16 +68,16 @@ window.addEventListener("load", () => {
 });
 
 
-//Changeable
+//other grid sizes
 slider.addEventListener("input", function() {
     gridSize = slider.value;
     const calWidth = 520 / gridSize;
     sliderValue.textContent = `${gridSize}` + " x " + `${gridSize}`;
-    container.innerHTML = ''; // Clears all the content inside the div
-    //Make the grid
+    container.innerHTML = ''; // clears all the content inside the div
+    //make the grid
     for (let i = 0; i < (Math.pow(gridSize, 2)); i++) {
         const div = document.createElement("div");
-        div.classList.add("childDiv"); // connect style
+        div.classList.add("childDiv");
         div.style.width = calWidth + "px"; // define the size
         container.appendChild(div); // add to the container
     };
@@ -103,7 +100,7 @@ slider.addEventListener("input", function() {
         childDiv.style.backgroundColor = colorPickedValue;
     }));
 
-    // Coloring mode
+    // coloring mode
     coloring.addEventListener("click",() => {
         square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
             childDiv.style.backgroundColor = colorPickedValue;        
@@ -117,14 +114,14 @@ slider.addEventListener("input", function() {
         })
     });
 
-    // Erase
+    // erase
     eraser.addEventListener("click",() => {
         square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
             childDiv.style.backgroundColor = "white";        
         }));
     });
 
-    // Rainbow mode
+    // rainbow mode
     rainbow.addEventListener("click",() => {
         square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
             const randomIndex = Math.floor(Math.random() * rainbowColors.length);
