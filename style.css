@@ -22,6 +22,7 @@ body {
 .main {
     display: flex;
     justify-content: center;
+    gap: 100px;
 }
 
 .container {
@@ -34,17 +35,29 @@ body {
     justify-content: stretch;
 }
 
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+button {
+    font-size: 18px;
+    padding: 8px;
+}
+
+#colorPicker {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    width: 200px; /* Adjust width to your preference */
+    height: 60px; 
+}
+
 .footer {
     display: flex;
     justify-content: center;
     margin: 16px;
 }
 
-
-.defaultColor {
-    background-color: aquamarine;
-}
-
-.childDivT {
-    background-color: black;
-}

@@ -17,7 +17,6 @@ const rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "vi
 window.addEventListener("load", () => {
     for (let i = 0; i < 256; i++) {
         const div = document.createElement("div");
-        div.classList.add("defaultColor"); // connect style
         div.classList.add("childDiv"); // connect style
         div.style.width = 32.5 + "px"; // define the size
         container.appendChild(div); // add to the container
@@ -81,7 +80,6 @@ slider.addEventListener("input", function() {
     //Make the grid
     for (let i = 0; i < (Math.pow(gridSize, 2)); i++) {
         const div = document.createElement("div");
-        div.classList.add("defaultColor"); // connect style
         div.classList.add("childDiv"); // connect style
         div.style.width = calWidth + "px"; // define the size
         container.appendChild(div); // add to the container
