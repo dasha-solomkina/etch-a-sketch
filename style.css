@@ -2,6 +2,7 @@ html {
     margin: 0;
     padding: 0;
     font-size: 18px;
+    background-color: #829cbc;
 }
 
 body {
@@ -16,7 +17,11 @@ body {
 
 .header {
     text-align: center;
-    font-size: 30px;
+    font-size: 38px;
+}
+
+h1 {
+    margin-bottom: 0;
 }
 
 .main {
@@ -33,12 +38,17 @@ body {
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: stretch;
+    background-color: white;
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
     gap: 32px;
+}
+
+.placeholder {
+    width: 200px;
 }
 
 button {

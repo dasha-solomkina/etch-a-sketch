@@ -50,14 +50,14 @@ window.addEventListener("load", () => {
     // clean the pad
     clear.addEventListener("click", () => {
         square.forEach(function(one) {
-            one.style.backgroundColor = "aquamarine";
+            one.style.backgroundColor = "white";
         })
     });
 
     // Erase
     eraser.addEventListener("click",() => {
         square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
-            childDiv.style.backgroundColor = "aquamarine";        
+            childDiv.style.backgroundColor = "white";        
         }));
     });
 
@@ -113,14 +113,14 @@ slider.addEventListener("input", function() {
     // clean the pad
     clear.addEventListener("click", () => {
         square.forEach(function(one) {
-            one.style.backgroundColor = "aquamarine";
+            one.style.backgroundColor = "white";
         })
     });
 
     // Erase
     eraser.addEventListener("click",() => {
         square.forEach((childDiv) => childDiv.addEventListener("mouseenter", () => {
-            childDiv.style.backgroundColor = "aquamarine";        
+            childDiv.style.backgroundColor = "white";        
         }));
     });
 
